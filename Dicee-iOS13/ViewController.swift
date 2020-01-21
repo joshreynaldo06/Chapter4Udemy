@@ -13,6 +13,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImage1: UIImageView!
     @IBOutlet weak var diceImage2: UIImageView!
     
+    var leftDice = 1
+    var rightDice = 5
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +27,16 @@ class ViewController: UIViewController {
     }
 
     @IBAction func rollButtonClicked(_ sender: UIButton) {
-        diceImage1.image = #imageLiteral(resourceName: "DiceFour")
-        diceImage2.image = #imageLiteral(resourceName: "DiceFive")
+        
+        diceImage1.image = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")] [leftDice]
+        
+        leftDice = leftDice + 1
+        
+        diceImage2.image = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")] [rightDice]
+        
+        rightDice = rightDice - 1
+        
+        
     }
     
 }
